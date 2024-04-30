@@ -1125,9 +1125,9 @@ gateway:
   # Gateway service configuration
   service:
     # -- Port of the gateway service
-    port: 80
+    port: 3001
     # -- Type of the gateway service
-    type: ClusterIP
+    type: LoadBalancer
     # -- ClusterIP of the gateway service
     clusterIP: null
     # -- Node port if service type is NodePort
