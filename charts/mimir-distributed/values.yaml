@@ -2473,9 +2473,9 @@ nginx:
   # Nginx service configuration
   service:
     # -- Port of the nginx service
-    port: 80
+    port: 3002
     # -- Type of the nginx service
-    type: ClusterIP
+    type: LoadBalancer
     # -- ClusterIP of the nginx service
     clusterIP: null
     # -- Node port if service type is NodePort
