@@ -1,19 +1,33 @@
-# Notice of relocation
+# Grafana Mimir Helm chart
 
-The `mimir-distributed` chart source code has moved to the [Grafana Mimir](https://github.com/grafana/mimir) GitHub repository.
+Helm chart for deploying [Grafana Mimir](https://grafana.com/docs/mimir/latest/) or optionally [Grafana Enterprise Metrics](https://grafana.com/docs/enterprise-metrics/latest/) to Kubernetes.
 
-Contents of this file, including installation instructions are moved to this [README.md](https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/README.md) in the new repository.
+For the full documentation, visit [Grafana mimir-distributed Helm chart documentation](https://grafana.com/docs/helm-charts/mimir-distributed/latest/).
 
-## Usage
+> **Note:** The documentation version is derived from the Helm chart version which is 5.4.0-weekly.288.
 
-Usage will not be impacted, the `mimir-distributed` chart will continue to be released to the same [https://grafana.github.io/helm-charts](https://grafana.github.io/helm-charts) Helm repository as before.
+When upgrading from Helm chart version 4.X, please see [Migrate the Helm chart from version 4.x to 5.0](https://grafana.com/docs/helm-charts/mimir-distributed/latest/migration-guides/migrate-helm-chart-4.x-to-5.0/).
+When upgrading from Helm chart version 3.x, please see [Migrate from single zone to zone-aware replication with Helm](https://grafana.com/docs/helm-charts/mimir-distributed/latest/migration-guides/migrate-from-single-zone-with-helm/).
+When upgrading from Helm chart version 2.1, please see [Upgrade the Grafana Mimir Helm chart from version 2.1 to 3.0](https://grafana.com/docs/helm-charts/mimir-distributed/latest/migration-guides/migrate-helm-chart-2.x-to-3.0/) as well.
 
-## Issue tracking
+**IMPORTANT**: Always consult the [CHANGELOG.md](./CHANGELOG.md) file and the deprecation list there to learn about breaking changes that require action during upgrade.
 
-No need to move, reopen issues. New issues should be opened on the [Grafana Mimir issue](https://github.com/grafana/mimir/issues) page, however maintainers will keep processing the issues in the current [Grafana Community Kubernetes Helm Charts issues](https://github.com/grafana/helm-charts/issues) page as well.
+# mimir-distributed
 
-## Contributing
+![Version: 5.4.0-weekly.288](https://img.shields.io/badge/Version-5.4.0--weekly.288-informational?style=flat-square) ![AppVersion: r288](https://img.shields.io/badge/AppVersion-r288-informational?style=flat-square)
 
-New pull requests must be opened against the `main` branch in the [Grafana Mimir](https://github.com/grafana/mimir) GitHub repository. Maintainers will help moving existing pull requests from the current repository to [Grafana Mimir](https://github.com/grafana/mimir) based on priority and best effort.
+Grafana Mimir
 
-For contribution guidelines in [Grafana Mimir](https://github.com/grafana/mimir) GitHub repository, please see the dedicated "[Contributing to Grafana Mimir helm chart](https://github.com/grafana/mimir/tree/main/docs/internal/contributing/contributing-to-helm-chart.md)" page.
+## Requirements
+
+Kubernetes: `^1.20.0-0`
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://charts.min.io/ | minio(minio) | 5.0.14 |
+| https://grafana.github.io/helm-charts | grafana-agent-operator(grafana-agent-operator) | 0.3.21 |
+| https://grafana.github.io/helm-charts | rollout_operator(rollout-operator) | 0.15.0 |
+
+# Contributing and releasing
+
+Please see the dedicated "[Contributing to Grafana Mimir helm chart](https://github.com/grafana/mimir/tree/main/docs/internal/contributing/contributing-to-helm-chart.md)" page.
