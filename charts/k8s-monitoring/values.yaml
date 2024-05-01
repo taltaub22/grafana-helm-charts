@@ -1144,7 +1144,7 @@ opencost:
   enabled: true
 
   opencost:
-    @ignored 
+    # @ignored 
     exporter:
       # -- Default cluster ID to use if cluster is not set in Prometheus metrics. It should match cluster.name.
       defaultClusterId: "default-cluster"
