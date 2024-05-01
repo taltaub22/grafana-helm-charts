@@ -972,7 +972,7 @@ test:
   enabled: true
 
   # -- Additional queries to run during the test.
-  # NOTE that this uses the host, username, and password in the externalServices section.
+  # NOTE that this uses the host, , and password in the externalServices section.
   # The user account must have the ability to run queries.
   # Example:
   # extraQueries:
@@ -1144,7 +1144,7 @@ opencost:
   enabled: true
 
   opencost:
-    # @ignored -- This skips including these values in README.md
+    @ignored 
     exporter:
       # -- Default cluster ID to use if cluster is not set in Prometheus metrics. It should match cluster.name.
       defaultClusterId: "default-cluster"
