@@ -1,7 +1,7 @@
 # Cluster settings
 cluster:
   # -- The name of this cluster, which will be set in all labels. Required.
-  name: ""
+  name: "minikube"
 
   # -- The Kubernetes service. Change this if your cluster DNS is configured differently than the default.
   kubernetesAPIService: kubernetes.default.svc.cluster.local:443
@@ -13,7 +13,7 @@ externalServices:
   # Connection information for Prometheus
   prometheus:
     # -- Prometheus host where metrics will be sent
-    host: ""
+    host: "mimir-nginx:3002"
     # -- The key for the host property in the secret
     hostKey: host
 
@@ -39,7 +39,7 @@ externalServices:
     tenantIdKey: tenantId
 
     # -- one of "none", "basic"
-    authMode: basic
+    authMode: none
 
     # Authenticate to Prometheus using basic authentication
     basicAuth:
@@ -101,7 +101,7 @@ externalServices:
   # Connection information for Grafana Loki
   loki:
     # -- Loki host where logs and events will be sent
-    host: ""
+    host: "loki-loki-distributed-gateway:3001"
     # -- The key for the host property in the secret
     hostKey: host
 
@@ -125,7 +125,7 @@ externalServices:
     tenantIdKey: tenantId
 
     # -- one of "none", "basic"
-    authMode: basic
+    authMode: none
 
     # Authenticate to Loki using basic authentication
     basicAuth:
@@ -189,7 +189,7 @@ externalServices:
     tenantIdKey: tenantId
 
     # -- one of "none", "basic"
-    authMode: basic
+    authMode: none
 
     # Authenticate to Tempo using basic authentication
     basicAuth:
@@ -527,7 +527,7 @@ metrics:
   # Metrics from the API Server
   apiserver:
     # -- Scrape metrics from the API Server
-    enabled: false
+    enabled: true
 
     # -- How frequently to scrape metrics from the API Server
     # Overrides metrics.scrapeInterval
@@ -550,7 +550,7 @@ metrics:
   # Metrics from the Kube Controller Manager
   kubeControllerManager:
     # -- Scrape metrics from the Kube Controller Manager
-    enabled: false
+    enabled: true
 
     # -- Port number used by the Kube Controller Manager, set by --secure-port.
     port: 10257
@@ -576,7 +576,7 @@ metrics:
   # Metrics from the Kube Proxy
   kubeProxy:
     # -- Scrape metrics from the Kube Proxy
-    enabled: false
+    enabled: true
 
     # -- Port number used by the Kube Proxy, set in --metrics-bind-address.
     port: 10249
@@ -602,7 +602,7 @@ metrics:
   # Metrics from the Kube Scheduler
   kubeScheduler:
     # -- Scrape metrics from the Kube Scheduler
-    enabled: false
+    enabled: true
 
     # -- Port number used by the Kube Scheduler, set by --secure-port.
     port: 10259
@@ -628,7 +628,7 @@ metrics:
   # Cost related metrics from OpenCost
   cost:
     # -- Scrape cost metrics from OpenCost
-    enabled: true
+    enabled: false
 
     # -- How frequently to scrape metrics from OpenCost.
     # Overrides metrics.scrapeInterval
